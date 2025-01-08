@@ -45,8 +45,8 @@
 }
 
 svg {
-  width: 100%;
-  height: auto; /* 保持 SVG 縮放比例 */
+  max-width: 100%;
+  max-height: 100%; /* 保持 SVG 縮放比例 */
 }
 .background{
   top: -516px;
@@ -58,33 +58,38 @@ svg {
   flex-wrap: wrap;
 }
 
+/*SECTION - This*/
 .header_littleolive{
-  position: absolute;
+  /* position: absolute; */
   max-width: 10vw;
   height: auto;
-  left: 61px;
-  top: 5px;
-  z-index: 5;
+  /* left: 61px;
+  top: 5px; */
+  /* z-index: 5; */
 }
 
+/* Testing Section */
+
+
+/*SECTION - This*/
 .title_olive{
   /* Olive.com */
-  tab-size: 5;
-  position: absolute;
+  /* tab-size: 5; */
+  /* position: absolute; */
   width: 21vw; /*auto*/
-  height: 7vw; /*108px*/
+  
   /* width: 388px; 
   height: 108px; */
   /* left: calc(50% - 88px/2 - 565px); */
-  left: 250px;
-  top: 20px;
+  /* left: 250px;
+  top: 20px; */
   /* font-family: 'Rammetto One';
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 108px;
   color: #000000; */
-  z-index: 5;
+  /* z-index: 5; */
   }
 .header__trigger{
     tab-size: 5;
@@ -104,7 +109,7 @@ svg {
     margin: 0;
     outline: none;
     padding: 0;
-    position: fixed;
+   /* position: fixed;*/
     top: 25px;
     right: 30px;
     background-color: rgba(0, 0, 0, 0);
@@ -119,16 +124,31 @@ svg {
   transition: 300ms var(--ease-in-out);
 }
 
+.tomato{
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 5vw;
+  padding-top: 5vw;
+}
+.click{
+  /* position: absolute; */
+  width: 36vw;/*692.57px*/
+  height: 4vw;/*84px*/
+  /* left: calc(50% - 692.57px/2 + 0.29px); */
+   /*231*/
+  animation: blink 1.5s infinite;
+  }
+  
 .middle_tomato{
   /* tomato */
-  position: absolute;
-  width: 800px;
+  /* position: absolute; */
+  max-width: 41vw;
   height: auto;
-  left: calc(50% - 669px/2 - 1.5px);
-  top: 330px;
-
+/*   left: calc(50% - 669px/2 - 1.5px); */
+  top: 3vw; /*330*/
   background: url(tomato.png);
-
   animation: zoomIn 1s ease-out forwards;
 }
 
@@ -141,6 +161,11 @@ svg {
       transform: scale(1); /* 恢復原始大小 */
       opacity: 1; /* 完全顯示 */
   }
+}
+.what{
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 #record {
@@ -204,7 +229,6 @@ svg {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 30vh;
   color: #2fe351;
 }
 
@@ -229,9 +253,9 @@ a:hover{
 }
 .leaderbd{
   display: flex;
-  padding-top: 2vw; /**/
-  padding-left: 5vw; /*800px*/
-  
+  gap: 2vw;
+  /*padding-left: 5vw; */
+  /*800px*/
 }
 /*
 .header .list .listbuttons{
@@ -265,11 +289,14 @@ header {
     max-width: auto;
     height: 15vh;
     display: flex;
-    justify-content: center;
-   /*  align-items: center; */
+    justify-content: space-between;
+    align-items: center;
     /* flex-wrap: wrap; */
     background-color: #2fe351;
-    
+  }
+  .LOGO{
+    display: flex;
+    align-items: center;
   }
 /*article{
     width: 100%;
@@ -280,16 +307,6 @@ header {
     flex-wrap: wrap;
     background-color: #de2929;
 }*/
-
-/*}
-  .music-player{
-    background: #2d4829;
-    width: 400px;
-    padding: 25px 35px;
-    text-align: center;
-  }*/
-
-  
   .logo {
     width: 1200px;
     height: 700px;
@@ -378,7 +395,7 @@ html, body {
 }
 
 .righthand{
-  position: absolute;
+  /* position: absolute; */
   width: 1352px;
   height: 396px;
   background: url(image.png);
@@ -398,7 +415,7 @@ transform: rotate(-1.94deg);
 }
 
 .whatsOlive{
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: auto;
   left: calc(20% - 669px/2 - 1.5px);
@@ -406,8 +423,8 @@ transform: rotate(-1.94deg);
 }
 
 .whoarewe{
-  position: absolute;
-  width: 80%;
+  /* position: absolute; */
+  width: 100%;
   height: auto;
   left: calc(25% - 669px/2 - 1.5px);
   top: 2869px;
@@ -422,14 +439,6 @@ left: 1048.44px;
 top: 2087.84px;
 }
 
-.click{
-position: absolute;
-width: 692.57px;
-height: 84px;
-left: calc(50% - 692.57px/2 + 0.29px);
-top: 231px;
-animation: blink 1.5s infinite;
-}
 
 @keyframes blink {
   0% {
@@ -444,10 +453,9 @@ animation: blink 1.5s infinite;
 }
 
 .container{
-  width:  100%;
-  height: 110vh;
-  background: #de2929;
-  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+ 
 }
 .box{
   position: relative;
@@ -482,74 +490,87 @@ animation: blink 1.5s infinite;
 }
 
 .shopout{
-  display: flex;
-  z-index: 1;
-  position: absolute;
-  left: 120px;
-  top: -40px;
   align-items: center;
-  justify-content: center;
+/*   justify-content: center; */
+  flex-flow: column;
+  display: flex;
+  gap: 1vw;
+  /* padding-top: vw; */
 }
+
 .shop{
-  width: 300px;
-  height: 300px;
-  overflow: hidden;
-  display: block;
-}
- .bag{
-  position: absolute;
-  width: 210px;
-  height: 215px;
-  left: 145px;
-  top: 230px;
+  align-items: center;
+  gap: 1vw;
+  padding-top: -4vw;
+} 
+.bag{
+  position: relative;
+  /*left: 145px; 145px*/
+  /*top: 230px; 230px*/
   background: url(-2_37.png);
   transition: transform 0.5s ease;
-  z-index: 2;
+  z-index: 8;
+  gap: 2vw;
  }
+.bagSvg{
+  width: 10vw; /*210*/
+  height: 11vw; /*215*/
+}
+
+.oliveSvg{
+  width: 4vw; /*94px*/
+  height: 5vw; /*107px*/
+}
+.wordSvg{
+  width: 9vw; /*94px*/
+  height: 10vw; /*107px*/
+}
+
 .oliveinbag{
-  position: absolute;
-  width: 94px;
-  height: 107px;
-  left: 196px;
-  top: 250px;
+  position: relative;
+/*   left: 196px;
+  top: 250px; */
 /*   object-fit: cover; */
   background: url(-1_38.png);
   transition: transform 0.5s ease;
   z-index: 1;
+  left: 20px;
  }
 .shopword{
   /* SHOP */
-  position: absolute;
-  width: 172.73px;
+/*   position: absolute; */
+/*   width: 172.73px;
   height: 40.01px;
-  left: 164.86px;
-  top: 459.19px;
+  left: 164.86px; */
+ /*  top: 459.19px; */
+ padding-top: -500px;
   z-index: 5;
   transition: transform 0.5s ease;
  }
 
 .oliveinbag {
-  transform: translateY(20%); /* 初始狀態，位於畫面下方 */
+  transform: translateY(-160%); /* 初始狀態，位於畫面下方 */
 }
 
 .shop:hover .oliveinbag {
-  transform: translateY(0); /* 滑鼠移入時，移動到畫面內 */
-  transform: scale(1.2);
+  /* transform: translateY(80%); 滑鼠移入時，移動到畫面內 */
+  transform: scale(1.1);
 }
 
 .shop:hover .bag {
   transform: translateY(30%); /* 滑鼠移入時，主圖片向上移出 */
 }
 .shop:hover .shopword {
-  transform: translateY(150%); /* 滑鼠移入時，主圖片向上移出 */
+  transform: translateY(10%); /* 滑鼠移入時，主圖片向上移出 */
 }
+/* .position-Absolute{
+  height: 9vw;
+} */
 
 .switch{
   display: flex;
-/*   justify-content: center;
-  align-items: center; */
   z-index: 1;
-  position: absolute;
+  /* position: absolute; */
   left: 230px;
   top: 500px;
   align-items: center;
@@ -557,8 +578,8 @@ animation: blink 1.5s infinite;
 }
 
 .character{
-    width: 300px;
-    height: 400px;
+    width: 15vw;
+    height: 20vw;
     align-items: center ;
     overflow: hidden;
 }
@@ -569,48 +590,57 @@ animation: blink 1.5s infinite;
   transition: opacity 0.3s ease;
 }
 .characterword{
-position: absolute;
-width: 295.38px;
-height: 38.92px;
+/* position: absolute; */
+width: 25vw;
+height: 2vw;
 }
 .music{
-  position: absolute;
-  left: 1500px;
-  top: 420px;
+/*   position: absolute; */
+  padding-left: 1500px;
+  padding-top: -200px;
+  flex-flow: column;
+  align-items: center;
+  /* display: flex; */
+  gap: 10vw;
+  padding-top: -4vw;
+  justify-content: center;
 }
 .cover{
-  position: absolute;
-  width: 208px;
-  height: 200px;
+  position: relative;
+  width: 10vw;
+  height: 10vw;
   left: -60px;
   top: 0;
   background: url(-4_17.png);
   transition: transform 0.5s ease;
-  z-index: 2;
+  z-index: -8;
  }
 .nap{
-  position: absolute;
-  width: 187px;
-  height: 183px;
+  /* position: absolute; */
+  width: 9vw;
+  height: 9vw;
   left: 70px;
   top: 0;
   background: url(-3_31.png);
   transition: transform 0.5s ease;
-  z-index: 1;
-  transform: translateX(-20%);
+/*   z-index: 20; */
+  transform: translateX(20%);
+  transform: translateY(-110%);
  }
  .musicword{
-  position: absolute;
-  width: 202.65px;
-  height: 38.92px;
-  left: -30px;
-  top: 220px;
+/*   position: absolute; */
+  width: 10vw;
+  height: 2vw;
+/*   left: -30px;
+  top: 220px; */
   z-index: 5;
   transition: transform 0.5s ease;
  }
 
 .music:hover .nap {
-  transform: translateX(0); /* 滑鼠移入時，移動到畫面內 */
+  transform: translateX(0); 
+  transform: translateY(-110%);
+  /* 滑鼠移入時，移動到畫面內 */
 /*   transform: scale(1.2); */
 }
 
