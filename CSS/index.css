@@ -1,0 +1,686 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and(max-width: 768px) {
+  .leaderbd {
+      flex-direction: column; /* 導覽列改為垂直排列 */
+      align-items: center;
+  }
+  .header__trigger{
+    
+    display: block;
+  }
+  .pic {
+      width: calc(33% - 20px); /* 改為兩列 */
+  }
+  .middle_tomato{
+    min-height: 400px;
+  }
+
+}
+@media only screen and(max-width: 430px) {
+  .header__trigger{
+    display: block;
+  }
+  .list{
+    display: none;
+  }
+  .list {
+      flex-direction: column; /* 導覽列改為垂直排列 */
+      align-items: center;
+  }
+  .pic {
+      width: calc(33% - 20px); /* 改為兩列 */
+  }
+  .middle_tomato{
+    min-height: 400px;
+  }
+}
+
+svg {
+  width: 100%;
+  height: auto; /* 保持 SVG 縮放比例 */
+}
+.background{
+  top: -516px;
+  position: absolute;
+  left: -330px;
+  width: 1920px;
+  height: 160px;
+  z-index: 10000;
+  flex-wrap: wrap;
+}
+
+.header_littleolive{
+  position: absolute;
+  max-width: 10vw;
+  height: auto;
+  left: 61px;
+  top: 5px;
+  z-index: 5;
+}
+
+.title_olive{
+  /* Olive.com */
+  tab-size: 5;
+  position: absolute;
+  width: auto;
+  height: 108px;
+  /* width: 388px; 
+  height: 108px; */
+  /* left: calc(50% - 88px/2 - 565px); */
+  left: 250px;
+  top: 20px;
+  font-family: 'Rammetto One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 108px;
+  color: #000000;
+  z-index: 5;
+  }
+.header__trigger{
+    tab-size: 5;
+    -webkit-tap-highlight-color: transparent;
+    word-break: break-word;
+    --screenHeight: 911px;
+    --pageHeight: 1105px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 300%;
+    box-sizing: border-box;
+    overflow: visible;
+    text-transform: none;
+    --webkit-appearance: button;
+    border: none;
+    cursor: pointer;
+    font-family: initial;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    position: fixed;
+    top: 25px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    max-height: 160px;
+    max-width: 160px;
+    z-index: 1005;
+    /* display: none; */
+}
+
+.header__trigger:hover{
+  scale: 1.1;
+  transition: 300ms var(--ease-in-out);
+}
+
+.middle_tomato{
+  /* tomato */
+  position: absolute;
+  width: 800px;
+  height: auto;
+  left: calc(50% - 669px/2 - 1.5px);
+  top: 330px;
+
+  background: url(tomato.png);
+
+  animation: zoomIn 1s ease-out forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+      transform: scale(0); /* 最小（不可見） */
+      opacity: 0; /* 初始透明 */
+  }
+  100% {
+      transform: scale(1); /* 恢復原始大小 */
+      opacity: 1; /* 完全顯示 */
+  }
+}
+
+#record {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* 點擊時平滑過渡效果 */
+}
+
+#record.rotating {
+  animation: spin 2s linear infinite; /* 定義無限旋轉動畫 */
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.menu {
+  position: fixed;
+  top: -500px; /* 初始位置在螢幕右側外 */
+  width: 100%; /* 選單寬度 */
+  height: 500px;
+  background-color: #2fe351;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 80px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.5s ease; /* 平滑右滑動作 */
+  z-index: 1000;
+  overflow-y: auto; /* 確保選單內容過多時可滾動 */
+  font-family: "Seymour One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu a {
+  color: #de2929;
+  text-decoration: none;
+  font-size: 36px;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu.open {
+  right: 300px; /* 選單滑出顯示 */
+}
+
+.libre-barcode-39-text-regular {
+  font-family: "Libre Barcode 39 Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 30vh;
+  color: #2fe351;
+}
+
+a {
+  color:#000000;
+}
+
+a:hover{
+  color:#474747;
+}
+
+.olive{
+  background-size: contain;
+}
+
+.list{
+  font-family: "Irish Grover", serif;
+  font-weight: 400;
+  font-style: normal;
+  /* justify-content:baseline;*/
+  display: block;
+}
+.leaderbd{
+  display: flex;
+  padding-top: 50px;
+  padding-left: 800px;
+  
+}
+/*
+.header .list .listbuttons{
+    font-size: 20px;
+    font-family: "Irish Grover", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    z-index: 1000;
+}*/
+/*article .container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}*/
+
+header {
+    /* width: auto; */
+    max-width: auto;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+   /*  align-items: center; */
+    /* flex-wrap: wrap; */
+    background-color: #2fe351;
+    
+  }
+/*article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #de2929;
+}*/
+
+/*}
+  .music-player{
+    background: #2d4829;
+    width: 400px;
+    padding: 25px 35px;
+    text-align: center;
+  }*/
+
+  
+  .logo {
+    width: 1200px;
+    height: 700px;
+    margin: -10px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 2;
+    left: -100px;
+    top: -200px;
+    /*border: 2px solid;*/
+  }
+  .logo img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .images{
+    position: relative;
+    width: 1200px;
+    height: 700px;
+    margin-left: 50px;
+    padding: 0 -100px;
+    object-fit: cover;
+    display: flex;
+  }
+
+  footer {
+    width: 100%;
+    height: 600px;
+    background-color: #2fe351;
+    bottom: -4000px;
+    margin-bottom: 0;
+    display: flex;
+    z-index: 3;
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: nowrap;
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+footer .h2{
+  color: #000000;
+}
+.irish-grover-regular {
+  font-family: "Irish Grover", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* 高度適應視窗 */
+  width: 100%;  /* 寬度適應視窗 */
+  background-color: #de2929; /* 設定背景顏色 */
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.content {
+  flex: 1;
+} 
+
+.lefthand{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background: url(image.png);
+  transform: rotate(-8.77deg);
+  top: 1700px;
+  left: calc(10% - 669px/2 - 1.5px);
+  z-index: 4;
+}
+
+.righthand{
+  position: absolute;
+  width: 1352px;
+  height: 396px;
+  background: url(image.png);
+  transform: rotate(0.2deg);
+  top: 2400px;
+  left: calc(10% - 669px/2 - 1.5px);
+}
+
+.coolpic{
+position: absolute;
+width: 675px;
+height: 675px;
+left: 208px;
+top: 2000px;
+background: url(未命名的作品14.jpg);
+transform: rotate(-1.94deg);
+}
+
+.whatsOlive{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  left: calc(20% - 669px/2 - 1.5px);
+  top: 1069px;
+}
+
+.whoarewe{
+  position: absolute;
+  width: 80%;
+  height: auto;
+  left: calc(25% - 669px/2 - 1.5px);
+  top: 2869px;
+  z-index: 2;
+}
+
+.whatword{
+position: absolute;
+width: 762.05px;
+height: 473.12px;
+left: 1048.44px;
+top: 2087.84px;
+}
+
+.click{
+position: absolute;
+width: 692.57px;
+height: 84px;
+left: calc(50% - 692.57px/2 + 0.29px);
+top: 231px;
+animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+      opacity: 0; /* 完全透明 */
+  }
+  50% {
+      opacity: 1; /* 完全不透明 */
+  }
+  100% {
+      opacity: 0; /* 回到完全透明 */
+  }
+}
+
+.container{
+  width:  100%;
+  height: 110vh;
+  background: #de2929;
+  overflow: hidden;
+}
+.box{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background: #de2929;
+  float: left;
+  border: 1.5px solid rgba(236, 30, 30, 0.5);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.box::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* background: #de2929; */
+  background-image: url("0.gif");
+  transition: 2s ease-in-out;
+}
+.box:hover::before{
+  transition: 0s ease-in-out;
+  background: #2fe351;
+}
+
+.box::after{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  /* background: #de2929; */
+  background-image: url("0.gif");
+  transition: 2s ease-in-out;
+}
+
+.shopout{
+  display: flex;
+  z-index: 1;
+  position: absolute;
+  left: 120px;
+  top: -40px;
+  align-items: center;
+  justify-content: center;
+}
+.shop{
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  display: block;
+}
+ .bag{
+  position: absolute;
+  width: 210px;
+  height: 215px;
+  left: 145px;
+  top: 230px;
+  background: url(-2_37.png);
+  transition: transform 0.5s ease;
+  z-index: 2;
+ }
+.oliveinbag{
+  position: absolute;
+  width: 94px;
+  height: 107px;
+  left: 196px;
+  top: 250px;
+/*   object-fit: cover; */
+  background: url(-1_38.png);
+  transition: transform 0.5s ease;
+  z-index: 1;
+ }
+.shopword{
+  /* SHOP */
+  position: absolute;
+  width: 172.73px;
+  height: 40.01px;
+  left: 164.86px;
+  top: 459.19px;
+  z-index: 5;
+  transition: transform 0.5s ease;
+ }
+
+.oliveinbag {
+  transform: translateY(20%); /* 初始狀態，位於畫面下方 */
+}
+
+.shop:hover .oliveinbag {
+  transform: translateY(0); /* 滑鼠移入時，移動到畫面內 */
+  transform: scale(1.2);
+}
+
+.shop:hover .bag {
+  transform: translateY(30%); /* 滑鼠移入時，主圖片向上移出 */
+}
+.shop:hover .shopword {
+  transform: translateY(150%); /* 滑鼠移入時，主圖片向上移出 */
+}
+
+.switch{
+  display: flex;
+/*   justify-content: center;
+  align-items: center; */
+  z-index: 1;
+  position: absolute;
+  left: 230px;
+  top: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
+.character{
+    width: 300px;
+    height: 400px;
+    align-items: center ;
+    overflow: hidden;
+}
+.heads {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.characterword{
+position: absolute;
+width: 295.38px;
+height: 38.92px;
+}
+.music{
+  position: absolute;
+  left: 1500px;
+  top: 420px;
+}
+.cover{
+  position: absolute;
+  width: 208px;
+  height: 200px;
+  left: -60px;
+  top: 0;
+  background: url(-4_17.png);
+  transition: transform 0.5s ease;
+  z-index: 2;
+ }
+.nap{
+  position: absolute;
+  width: 187px;
+  height: 183px;
+  left: 70px;
+  top: 0;
+  background: url(-3_31.png);
+  transition: transform 0.5s ease;
+  z-index: 1;
+  transform: translateX(-20%);
+ }
+ .musicword{
+  position: absolute;
+  width: 202.65px;
+  height: 38.92px;
+  left: -30px;
+  top: 220px;
+  z-index: 5;
+  transition: transform 0.5s ease;
+ }
+
+.music:hover .nap {
+  transform: translateX(0); /* 滑鼠移入時，移動到畫面內 */
+/*   transform: scale(1.2); */
+}
+
+.music:hover .cover {
+  transform: translateX(-30%); /* 滑鼠移入時，主圖片向上移出 */
+}
+
+.band{
+position: absolute;
+width: 100%;
+height: auto;
+left: 30px;
+top: 3509px;
+}
+
+.receipt{
+position: absolute;
+width: 600px;
+height: auto;
+left: 4px;
+top: 4600.87px;
+background: url(13.png);
+transform: rotate(-1.23deg);
+z-index: 7;
+}
+
+.libre-barcode-39-text-regular{
+  --min-size: 18;
+  --max-size: 48;
+  --font-size: calc(
+    (var(--min-size) * 1px) + 
+    (var(--max-size) - var(--min-size)) * 
+    ((100cqw - 320px) / (1920 - 320))
+  );
+  font-size: clamp(var(--min-size) * 1px, var(--font-size), var(--max-size) * 1px);
+}
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2fe351;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* 確保在最上層 */
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #2fe351;
+  border-top: 5px solid #de2929;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* 主內容樣式 */
+.contain {
+  display: none; /* 在加載完成前隱藏內容 */
+  text-align: center;
+  margin-top: 100px;
+}

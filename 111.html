@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋轉唱片與音樂播放 (SVG)</title>
+    <link rel="stylesheet" href="CSS/111.css">
+</head>
+<body>
+    <div class="record-container">
+        <svg id="record" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- 外圈 -->
+            <circle cx="100" cy="100" r="90" fill="#000" />
+            <!-- 中心圓 -->
+            <circle cx="100" cy="100" r="15" fill="#fff" />
+            <!-- 裝飾線條 -->
+            <circle cx="100" cy="100" r="70" fill="none" stroke="#555" stroke-width="2" />
+            <circle cx="100" cy="100" r="50" fill="none" stroke="#777" stroke-width="2" />
+        </svg>
+    </div>
+    <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <script src="js/index.js"></script>
+</body>
+</html>
