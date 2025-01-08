@@ -4,9 +4,9 @@
     padding: 0;
 }
 
-@media only screen and(max-width: 768px) {
+/* @media only screen and(max-width: 768px) {
   .leaderbd {
-      flex-direction: column; /* 導覽列改為垂直排列 */
+      flex-direction: column;
       align-items: center;
   }
   .header__trigger{
@@ -14,7 +14,7 @@
     display: block;
   }
   .pic {
-      width: calc(33% - 20px); /* 改為兩列 */
+      width: calc(33% - 20px);
   }
   .middle_tomato{
     min-height: 400px;
@@ -29,15 +29,19 @@
     display: none;
   }
   .list {
-      flex-direction: column; /* 導覽列改為垂直排列 */
+      flex-direction: column;
       align-items: center;
   }
   .pic {
-      width: calc(33% - 20px); /* 改為兩列 */
+      width: calc(33% - 20px);
   }
   .middle_tomato{
     min-height: 400px;
   }
+} */
+
+.text-M{
+  font-size: clamp(10px,3vw,40px);
 }
 
 svg {
@@ -67,19 +71,19 @@ svg {
   /* Olive.com */
   tab-size: 5;
   position: absolute;
-  width: auto;
-  height: 108px;
+  width: 21vw; /*auto*/
+  height: 7vw; /*108px*/
   /* width: 388px; 
   height: 108px; */
   /* left: calc(50% - 88px/2 - 565px); */
   left: 250px;
   top: 20px;
-  font-family: 'Rammetto One';
+  /* font-family: 'Rammetto One';
   font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 108px;
-  color: #000000;
+  color: #000000; */
   z-index: 5;
   }
 .header__trigger{
@@ -225,8 +229,8 @@ a:hover{
 }
 .leaderbd{
   display: flex;
-  padding-top: 50px;
-  padding-left: 800px;
+  padding-top: 2vw; /**/
+  padding-left: 5vw; /*800px*/
   
 }
 /*
